@@ -1,3 +1,5 @@
+/*---------- general ----------*/
+
 @font-face {
     font-family: futurist;
     src: url(../fonts/futurist/Futurist\ fixed-width.TTF);
@@ -32,7 +34,6 @@ body::-webkit-scrollbar {
 
 h1 {
     font-size: 70px;
-    /* text-shadow: 0 0 50px white; */
     font-family: futurist;
 }
 
@@ -48,7 +49,7 @@ h1 {
     justify-content: space-evenly;
 }
 
-.test {
+.modal-planet {
     margin-top: 70px;
     margin-bottom: 70px;
     font-family: futurist;
@@ -74,7 +75,7 @@ h1 {
     background-color: black;
 }
 
-.test:hover .overlay {
+.modal-planet:hover .overlay {
     opacity: 1;
 }
 
@@ -99,10 +100,7 @@ p {
     text-align: center;
 }
 
-
-
-
-
+/*---------- modale ----------*/
 
 @-webkit-keyframes animatetop {
     from {
@@ -167,14 +165,34 @@ p {
     cursor: pointer;
 }
 
-.modalHeader {
-    padding: 2px 16px;
-    background-color: black;
-    color: white;
-}
-
 .modalBody {
     padding: 2px 16px;
     background-color: black;
     color: white;
 }
+
+.img-modal {
+    width: 400px;
+    height: 400px;
+    margin: auto;
+}
+
+.align {
+    padding: 10% 0;
+    width: 50%;
+    margin: auto;
+}
+
+.img-planet {
+    animation: turn 8s infinite alternate-reverse;
+}
+
+@keyframes turn {
+    from {
+      transform: translateY(0px) rotate(15deg);
+    }
+    to {
+      transform: translateY(0px) rotate(30deg);
+    }
+}
+
