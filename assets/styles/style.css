@@ -5,9 +5,15 @@
     src: url(../fonts/futurist/Futurist\ fixed-width.TTF);
 }
 
+@font-face {
+    font-family: tommy;
+    src: url(../fonts/tommy/Regular.otf);
+}
+
 body, html {
     height: 100%;
     margin: 0px;
+    font-family: tommy;
 }
 
 body::-webkit-scrollbar {
@@ -100,29 +106,11 @@ p {
     text-align: center;
 }
 
+.img-planet {
+    animation: turn 8s infinite alternate-reverse;
+}
+
 /*---------- modale ----------*/
-
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0;
-    }
-    to {
-        top: 0;
-        opacity: 1;
-    }
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0;
-    }
-    to {
-        top: 0;
-        opacity: 1;
-    }
-}
 
 #modal {
     display: none;
@@ -146,9 +134,7 @@ p {
     border: 1px solid #888;
     width: 90%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
+    animation-name: modal;
     animation-duration: 0.4s;
 }
 
@@ -175,6 +161,7 @@ p {
     width: 400px;
     height: 400px;
     margin: auto;
+    animation: levitate 4s infinite alternate-reverse;
 }
 
 .align {
@@ -183,16 +170,34 @@ p {
     margin: auto;
 }
 
-.img-planet {
-    animation: turn 8s infinite alternate-reverse;
+/*---------- animations ----------*/
+
+@keyframes modal {
+    from {
+        top: -300px;
+        opacity: 0;
+    }
+    to {
+        top: 0;
+        opacity: 1;
+    }
 }
 
 @keyframes turn {
     from {
-      transform: translateY(0px) rotate(15deg);
+      transform: translateY(0px) rotate(-15deg);
     }
     to {
-      transform: translateY(0px) rotate(30deg);
+      transform: translateY(0px) rotate(15deg);
+    }
+}
+
+@keyframes levitate {
+    from {
+        transform: translateY(10px);
+    }
+	to {
+        transform: translateY(-10px);
     }
 }
 
